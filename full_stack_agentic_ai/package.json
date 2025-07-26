@@ -1,0 +1,33 @@
+{
+  "name": "full_stack_agentic_ai",
+  "version": "1.0.0",
+  "description": "An Agentic AI based Ticketing system such as Gitlab that will be used by larger companies",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/your-repo-name"
+  },
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "watch": [
+    "index.js"
+  ],
+  "ext": "js,json",
+  "exec": "node index.js",
+  "author": "M.Sufyan Ahmed",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.5",
+    "nodemailer": "^7.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
