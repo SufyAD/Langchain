@@ -19,22 +19,22 @@ export default inngest.createFunction({ id: "on-user-signup" }, { event: "user/s
             // user = {name, email, password}
             const user = await step.run("get-user-email", async() => {
                 const userObj = await User.findOne({ email });
-                if (!userObj) {
+                if(!userObj) {
                     throw new NonRetriableError("User no longer exists");
                 }
                 return userObj;
             });
 
-            // Pipeline 2: Send personalized welcome email
+            // Pipeline 2: Send personalized welcome email to user (extracted from the DB)
             await step.run("send-welcome-email", async() => {
                 await sendMail({
                     to: user.email,
-                    subject: "Welcome to Our Platform!",
+                    subject: "Welcome to Our Sufyan's Agentic AI System!",
                     text: `Hi ${user.name},\n\nWe're glad to have you on board!\n\nBest regards,\nTeam`,
                 });
             });
             return { message: "success" };
-        } catch (error) {
+        } catch(error) {
             console.error("Signup Function Error:", error);
             throw error;
         }
